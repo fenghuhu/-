@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript" src="js/viewport.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>2019年春节倒计时-黑马前端版</title>
+</head>
+
+<body>
+    <audio autoplay="autoplay" loop="loop" id="audio">
+        <source src="./audio/music.mp3" />
+    </audio>
+    <div>
+        <img src="./img/bg_1.png" alt="">
+        <img src="./img/bg_2.png" alt="">
+        <img src="./img/bg_3.png" alt="">
+        <img src="./img/bg_4.png" alt="">
+        <img src="./img/bg_5.png" alt="">
+    </div>
+    <div class="main">
+        <div class="bg">
+            <div class="bg_bd_1"><img src="./img/main_bd_1.png" alt=""></div>
+            <div class="bg_bd_2"><img src="./img/main_bd_2.png" alt=""></div>
+            <div class="bg_fu"><img src="./img/fu.png" alt=""></div>
+            <div class="bg_clock"><img src="./img/clock.png" alt=""></div>
+        </div>
+        <div class="content">
+            <div class="content_all content_1">
+                <h2>春节倒计时</h2>
+                <p>2月4日23:59 星期一</p>
+                <div class="time">
+                    <p><span class="int_day_shi">1</span><span class="int_day_ge">2</span>天<span class="int_hour_shi">1</span><span
+                            class="int_hour_ge">2</span>时<span class="int_minute_shi">1</span><span class="int_minute_ge">2</span>分<span
+                            class="int_second_shi">1</span><span class="int_second_ge">2</span>秒</p>
+                </div>
+            </div>
+            <div class="content_all content_2">
+                <h2>深圳黑马第33期前端<br>开班倒计时</h2>
+                <p>2月21日</p>
+                <div class="time">
+                    <p><span class="int_day_shi">1</span><span class="int_day_ge">2</span>天<span class="int_hour_shi">1</span><span
+                            class="int_hour_ge">2</span>时<span class="int_minute_shi">1</span><span class="int_minute_ge">2</span>分<span
+                            class="int_second_shi">1</span><span class="int_second_ge">2</span>秒</p>
+                </div>
+            </div>
+            <div class="content_all content_3">
+                <h2>2018年还有</h2>
+                <p>2018年02月16日-2019年2月4日</p>
+                <div class="time">
+                    <p><span class="baifenbi_time">1.8962935</span>%</p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <p class="newYear">2019-乙亥年</p>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="./js/time.js"></script>
+<script>
+    newYear_time();
+    shengyu_time();
+    openClass_time();
+</script>
+  <script>
+	//--创建页面监听，等待微信端页面加载完毕 触发音频播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+            audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+    audioAutoPlay();
+});
+//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+document.addEventListener('touchstart', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+            audio.play();
+    }
+    audioAutoPlay();
+});
+  </script>
+</html>
